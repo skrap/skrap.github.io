@@ -29,7 +29,7 @@ I've annotated the above in C-ish code, for the curious.  All you really need to
 
 ## Assembler
 
-I should pause here to make a note about the toolchain for building SDMA binaries.  I hear that there is a real one somewhere, and the i.MX25 Reference Manual even makes reference to an API which custom scripts can call.  However, none of that is available any more, or is at a minimum locked away behind NDAs.
+I should pause here to make a note about the toolchain for building SDMA binaries.  I hear that there is a "real" C compiler somewhere in NXP-land, and the i.MX25 Reference Manual even makes reference to an API which custom scripts can call.  However, none of that is available any more, or is at a minimum locked away behind NDAs.
 
 Luckily, the instruction set is quite simple, and Eli Billauer wrote a perfectly capable assembler in Perl, which I copied and altered so that it would produce raw script binaries.  My version is available [here].  Typical usage is something like:
 ```
@@ -42,17 +42,19 @@ This will produce output to stderr for you to look at, and also write the assemb
 
 The Linux SDMA driver doesn't have native support for running custom scripts.  But it's not too hard to add, so let's do it!  I made the following changes against Linux 4.1.15 from the [linux-fslc](https://github.com/Freescale/linux-fslc) repository's 4.1-2.0.x-imx branch.  But they could be easily adapted to other situations.
 
-- Reserve a channel
-- RAM script end marker
-- User script sysfs entry
-- Registers sysfs entries
-- Trigger sysfs entry
+[ ] Reserve a channel
+[ ] TODO RAM script end marker
+[ ] User script sysfs entry
+[ ] Add registers sysfs entries
+[ ] Add trigger sysfs entry
+[ ] Demo full cycle
 
 ## Context Snapshot for Debugging
 
 The SDMA engine only runs one channel at a time.  Each channel's script must explicitly yield its time for other scripts to have a chance to run.  When a script yields and the SDMA switches to another script, it preserves the registers of the yielding script to SDMA internal RAM in what's called a "channel context".  The layout of this context is specified in the reference manual.  In the iMX7D manual, it's in Table 7-13, "Layout of a Channel Context in Memory for SDMA", but it appears in each i.MX version's manual in more or less the same form.
 
-We can take advantage of this context saving by actually downloading the context from the SDMA to the CPU for examination.  This gives us a good idea of what the SDMA was doing when it switched contexts, including the PC, error flags, general and scratch registers, etc.
+We can take advantage of this context saving by actually downloading the context from the SDMA to the CPU for examination.  This gives us a good idea of what the SDMA was doing when it switched contexts, including the PC, error flags, general and scratch registers, and state of the various peripherals (more on the peripherals later).
 
-- Updated version of Eli's context dumper, including scratch registers.
+[ ] Updated version of Eli's context dumper, including scratch registers.
+[ ] Demo full cycle
 
