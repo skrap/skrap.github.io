@@ -30,5 +30,5 @@ The i.MX51 manual doesn't include documentation on the SDMA scripts themselves. 
 
 When Part IV of Eli's SDMA blog concluded, he had demonstrated how to assemble and run very simple SDMA scripts.  I want to take this further, and write a more complex script which makes full use of the SDMA.  My goal will be to write a script which generates data and pushes it to a shared peripheral.  I will make use of the buffer descriptors which are used to pass parameters to the other scripts.  This will allow my script to make use of the 4.1.15 linux SDMA driver, which I imagine has come quite some way since Eli looked at it in 2011.
 
-We'll continue in [Part 2: Script Parameters]...
+We'll continue in [Part 2: Creating Custom Scripts]...
 
