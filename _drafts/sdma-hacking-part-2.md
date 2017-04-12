@@ -43,7 +43,7 @@ This will produce output to stderr for you to look at, and also write the assemb
 The Linux SDMA driver doesn't have native support for running custom scripts.  But it's not too hard to add, so let's do it!  I made the following changes against Linux 4.1.15 from the [linux-fslc](https://github.com/Freescale/linux-fslc) repository's 4.1-2.0.x-imx branch.  But they could be easily adapted to other situations.
 
 [ ] Reserve a channel
-[ ] TODO RAM script end marker
+[ ] RAM script end marker
 [ ] User script sysfs entry
 [ ] Add registers sysfs entries
 [ ] Add trigger sysfs entry
