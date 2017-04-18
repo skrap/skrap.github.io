@@ -92,3 +92,5 @@ So what *are* those parameters we were talking about?  Well, the parameters in q
     *  *It is vital that this match with however you've configured the peripheral!*  Each peripheral has a DMA TX/RX watermark, and it really should match the value passed to the SDMA script.  Unless you want bugs or lousy performance, I guess!
 
 See Appendix A of the i.MX6DQ Reference Manual, in the section named "Parameters Definition", for more details.
+
+Whew! That's a lot to chew on.  When you're ready, meet me in [Part 4!](sdma-hacking-part-4.html).
