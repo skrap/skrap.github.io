@@ -11,9 +11,8 @@
 	display: none;
 }
 
-section {
-	margin-top: inherit;
-}
+section { margin: 0; }
+section #title { margin-bottom: 0 }
 
 code {
 	margin: 0 1px;
