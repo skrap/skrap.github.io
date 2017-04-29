@@ -38,7 +38,7 @@ I've annotated the above in C-ish code, for the curious.  All you really need to
 
 I should pause here to make a note about the toolchain for building SDMA binaries.  I hear that there is a "real" C compiler somewhere in NXP-land, and the i.MX25 Reference Manual even makes reference to an API which custom scripts can call.  However, none of that is available any more, or is at a minimum locked away behind NDAs.
 
-Luckily, the instruction set is quite simple, and Eli Billauer wrote a perfectly capable assembler in Perl, which I copied and altered so that it would produce raw script binaries.  My version is available [here](/assets/other/sdma_asm.pl).  Typical usage is something like:
+Luckily, the instruction set is quite simple, and Eli Billauer wrote a perfectly capable assembler in Perl, which I copied and altered so that it would produce raw script binaries.  My version is available [here](sdma_asm.pl).  Typical usage is something like:
 ```
 ./sdma_asm.pl first-script.asm > /tmp/out.asm
 ```
@@ -262,7 +262,7 @@ static int snapshot(struct sdma_engine *sdma, int channel) {
 }
 ```
 
-Armed with that info and code, you should be able to write your own SDMA scripts, load them up, and watch them run!   You'll probably want the [assembler](/assets/other/sdma_asm.pl), which is a modified version of Eli's assembler.
+Armed with that info and code, you should be able to write your own SDMA scripts, load them up, and watch them run!   You'll probably want the [assembler](sdma_asm.pl), which is a modified version of Eli's assembler.
 
 It outputs annotated assembly to STDERR, while writing raw binary to STDOUT.  A bit awkward, I know, but it works well if you use it like so:
 

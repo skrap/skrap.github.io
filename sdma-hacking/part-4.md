@@ -18,7 +18,7 @@ First, let me talk about the flow of data which I think is optimal.  From the bl
 
 Here's the block diagram of the i.MX7, with the SDMA, SPBA and SPI modules highlighted.  We want to have the communication between the SPI module and the SDMA happen over the SPBA (in green below), and *not* via the AXI bus (orange, below).  Only data destined for DRAM should go out over the AXI bus.
 
-![i.MX block diagram with SPBA, SDMA, and AXI highlighted](/assets/img/NXP-i.MX7-Block-Diagram.png)
+![i.MX block diagram with SPBA, SDMA, and AXI highlighted](NXP-i.MX7-Block-Diagram.png)
 
 ## shp_2_mcu, mcu_2_shp, and mcu_2_ecspi
 
@@ -137,7 +137,7 @@ Then, somewhere in probe, add the following:
 
 Once those attributes are in place, you should be able to find the sdma node in /sys, copy those sysfs files to normal files, and disassemble them.  You'll find some interesting stuff!  
 
-I used a slightly modified version of the disassembler I found in a comment on Eli's blog post.  It's by "Exslestonec", but I can't find too much more online.  But whoever you are, you have my gratitude, and if you'd like a linkback or other credit, please get in touch!  My modified version is [here](/assets/other/sdma_disam.pl).
+I used a slightly modified version of the disassembler I found in a comment on Eli's blog post.  It's by "Exslestonec", but I can't find too much more online.  But whoever you are, you have my gratitude, and if you'd like a linkback or other credit, please get in touch!  My modified version is [here](sdma_disam.pl).
 
 However, before we start reading the disassembled code, I should mention that you'll want to familiarize yourself with the SDMA's Functional Units.  These are two peripherals on the SDMA, which are the only way for the SDMA to read and write over the AXI bus.  They are accessed via two dedicated instructions: LDF and STF.  When you see those instructions below, keep in mind those are AXI bus reads and writes.  You may want to familiarize yourself with those units by reading the "Functional Units" chapter of the reference manual.  Or just take my word for it!
 
