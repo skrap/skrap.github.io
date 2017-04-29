@@ -2,7 +2,14 @@
 title:  "SDMA Hacking Part 2: Creating Custom Scripts"
 tags: code sdma
 ---
-# {{ page.title }}
+This is part 2 of this series of posts on programming the i.MX SDMA Engine.  The full series is as follows:
+
+* [Part 1: Introduction](/sdma-hacking/part-1.html)
+* Part 2: Creating Custom Scripts (this part)
+* [Part 3: Script Parameters](/sdma-hacking/part-3.html)
+* [Part 4: Standard ROM Scripts](/sdma-hacking/part-4.html)
+* [Part 5: Custom SPI Script](/sdma-hacking/part-5.html)
+
 
 Ok, by the end of this entry, you'll know everything you need in order to run your own SDMA scripts from Linux!  Let's dig right in.
 
@@ -31,7 +38,7 @@ I've annotated the above in C-ish code, for the curious.  All you really need to
 
 I should pause here to make a note about the toolchain for building SDMA binaries.  I hear that there is a "real" C compiler somewhere in NXP-land, and the i.MX25 Reference Manual even makes reference to an API which custom scripts can call.  However, none of that is available any more, or is at a minimum locked away behind NDAs.
 
-Luckily, the instruction set is quite simple, and Eli Billauer wrote a perfectly capable assembler in Perl, which I copied and altered so that it would produce raw script binaries.  My version is available [here].  Typical usage is something like:
+Luckily, the instruction set is quite simple, and Eli Billauer wrote a perfectly capable assembler in Perl, which I copied and altered so that it would produce raw script binaries.  My version is available [here](/assets/other/sdma_asm.pl).  Typical usage is something like:
 ```
 ./sdma_asm.pl first-script.asm > /tmp/out.asm
 ```
@@ -265,4 +272,4 @@ $ ./sdma_asm.pl my_great_script.asm > /tmp/asm.out
 
 Go on, play around with it!  I bet you can find something fun to do.
 
-Once you're in the mood for more reading, check out [Part 3](/sdma-hacking-part-3.html).
+Once you're in the mood for more reading, check out [Part 3](/sdma-hacking/part-3.html).

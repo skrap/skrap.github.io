@@ -1,27 +1,15 @@
-## Recent Posts:
+# This & Me
+
+This is a blog, written by an engineer.  If you think this stuff is neat, I'm afraid you might be a giant nerd.
+
+I am a nerd, too!  I like computers, and have been a professional software engineer since 2003.  I am a generalist, which basically means I like trying lots of different things.
+
+Feel free to get in touch with me at [jonah@petri.us](mailto:jonah@petri.us).
+
+# Recent Posts:
 
 {% for post in site.posts %}
-- [{{ post.title }}]({{ post.url }})
+### {{ post.title }} - {{ post.date | date: "%a, %b %d, %Y"}}
+{{ post.excerpt }}
+[Read more…]({{ post.url }})
 {% endfor %}
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```

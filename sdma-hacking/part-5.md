@@ -2,7 +2,13 @@
 title:  "SDMA Hacking Part 5: Custom SPI Script"
 tags: code sdma
 ---
-# {{ page.title }}
+This is part 5 of this series of posts on programming the i.MX SDMA Engine.  The full series is as follows:
+
+* [Part 1: Introduction](/sdma-hacking/part-1.html)
+* [Part 2: Creating Custom Scripts](/sdma-hacking/part-2.html)
+* [Part 3: Script Parameters](/sdma-hacking/part-3.html)
+* [Part 4: Standard ROM Scripts](/sdma-hacking/part-4.html)
+* Part 5: Custom SPI Script (this part)
 
 Ok! If you've made it this far, you should have a pretty good idea of the inner workings of the SDMA and the ROM and RAM scripts which it uses.  Now, we have all the info we need to complete our task.  We're going to rewrite the `mcu_2_ecspi` script with two important changes:
 

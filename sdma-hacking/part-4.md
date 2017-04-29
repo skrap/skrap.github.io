@@ -2,7 +2,13 @@
 title:  "SDMA Hacking Part 4: Standard ROM Scripts"
 tags: code sdma
 ---
-# {{ page.title }}
+This is part 4 of this series of posts on programming the i.MX SDMA Engine.  The full series is as follows:
+
+* [Part 1: Introduction](/sdma-hacking/part-1.html)
+* [Part 2: Creating Custom Scripts](/sdma-hacking/part-2.html)
+* [Part 3: Script Parameters](/sdma-hacking/part-3.html)
+* Part 4: Standard ROM Scripts (this part)
+* [Part 5: Custom SPI Script](/sdma-hacking/part-5.html)
 
 Way back in Part I of this series, I spoke of my main goal: to write a script which optimized the process of reading data from the i.MX's SPI module and copying it to main memory.
 
@@ -432,6 +438,6 @@ This odd-looking little routine at PC offset 473 takes the high 16 bits of r6 an
 
 If you want to explore further, check out the "DMA memory map" section of the reference manual, and compare it to the main bus base addresses of the peripherals.  Quite neatly done!
 
-So, our odd little friend at SDMA PC 473 maps a peripheral address from main memory into its SDMA address.  A very useful routine indeed.  We'll make use of it for sure.
+So, our odd little friend at SDMA PC 473 maps a peripheral address from main memory into its SDMA address.  A very useful routine indeed.  We'll remember it for our next task!
 
-We are so close!  Let's bring it all home in [Part 5](/sdma-hacking-part-5.html).
+We are so close!  Let's bring it all home in [Part 5](/sdma-hacking/part-5.html).

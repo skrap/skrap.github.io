@@ -2,8 +2,15 @@
 title:  "SDMA Hacking Part I: Introduction"
 tags: code sdma
 ---
-# {{ page.title }}
 This is the first in a series of posts on working with the SDMA engine on NXP's i.MX series processors.  The SDMA engine is a simple RISC processor masquerading as a DMA engine, and it is used to perform DMA tasks on the i.MX SoC.
+
+Here's what's in the series:
+* Part 1: Introduction (this part)
+* [Part 2: Creating Custom Scripts](/sdma-hacking/part-2.html)
+* [Part 3: Script Parameters](/sdma-hacking/part-3.html)
+* [Part 4: Standard ROM Scripts](/sdma-hacking/part-4.html)
+* [Part 5: Custom SPI Script](/sdma-hacking/part-5.html)
+
 
 The SDMA engine is a processor in its own right, and it is fully programmable.  Its programs are called "scripts", even though they are really compiled to bytecode, and don't resemble anything human-readable in their raw form.  This is somewhat exciting, as it means that we can use the SDMA processor to push the i.MX harder than linux alone could.
 
@@ -32,5 +39,5 @@ When Part IV of Eli's SDMA blog concluded, he had demonstrated how to assemble a
 
 This example may seem a bit esoteric, but regular sampling from simple SPI ADCs is actually a very common use case.  And if you understand this example, it can serve as a launching point for nearly any other type of script one might want to write!
 
-We'll continue in [Part 2: Creating Custom Scripts](sdma-hacking-part-2.html)...
+We'll continue in [Part 2: Creating Custom Scripts](/sdma-hacking/part-2.html)...
 

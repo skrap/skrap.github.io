@@ -2,7 +2,13 @@
 title:  "SDMA Hacking Part 3: Script Parameters"
 tags: code sdma
 ---
-# {{ page.title }}
+This is part 3 of this series of posts on programming the i.MX SDMA Engine.  The full series is as follows:
+
+* [Part 1: Introduction](/sdma-hacking/part-1.html)
+* [Part 2: Creating Custom Scripts](/sdma-hacking/part-2.html)
+* Part 3: Script Parameters (this part)
+* [Part 4: Standard ROM Scripts](/sdma-hacking/part-4.html)
+* [Part 5: Custom SPI Script](/sdma-hacking/part-5.html)
 
 The script we wrote in Part 2 was cute, but not particularly useful.  What's a DMA engine if it can't copy data around your system for you?  Fortunately, the SDMA comes with a bunch of useful scripts in its ROM section, and most SoCs have a companion firmware file which contains further scripts to be loaded into the SDMA's RAM section, and run.
 
@@ -93,4 +99,4 @@ So what *are* those parameters we were talking about?  Well, the parameters in q
 
 See Appendix A of the i.MX6DQ Reference Manual, in the section named "Parameters Definition", for more details.
 
-Whew! That's a lot to chew on.  When you're ready, meet me in [Part 4!](sdma-hacking-part-4.html).
+Whew! That's a lot to chew on.  When you're ready, meet me in [Part 4!](/sdma-hacking/part-4.html).
